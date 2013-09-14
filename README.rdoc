@@ -1,3 +1,19 @@
-= PdfjsRailsEngine
+PDFJS RAILS Engine
 
-This project rocks and uses MIT-LICENSE.
+This gem integrate Mozilla's awesome PDF.jS javascript library to your Rails project. Here is the original pdf.js repo: https://github.com/mozilla/pdf.js/
+
+NOTE: This is not yet optimized. Only experimental. Only works with pdfs stored in your rails app.
+
+Instructions:
+
+1 Add this to your GEMFILE:
+  gem 'pdfjs-rails-engine', github: "normancapule/pdfjs-rails-engine"
+2 Mount the Gem's routes to your routes (routeception):
+  mount PdfjsRailsEngine::Engine
+3 View your pdfs in the viewer with this url pattern:
+  /#{your-path-to-the-pdf-viewer}?file=/PDF.pdf
+
+To do:
+  Add l10n resources of the pdf.js repo
+  Minify all the js libraries (Only pdf.js and pdf.worker.js are minified)
+  Allow pdf viewer to access remote urls
